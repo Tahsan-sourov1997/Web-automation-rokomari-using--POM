@@ -18,8 +18,12 @@ public class TestWritterPage extends driverSetup{
         Thread.sleep(5000);
         writterPage.clickElement(writterPage.writter_humayan);
         Thread.sleep(3000);
-        actions.scrollByAmount(0,1000).build().perform();
+        actions.scrollToElement(writterPage.getElement(writterPage.rochona_text)).build().perform();
         Thread.sleep(5000);
+        writterPage.clickElement(writterPage.add_cross_btn);
+        writterPage.clickElement(writterPage.somokalin_text);
+        actions.scrollToElement(writterPage.getElement(writterPage.rochona_text)).build().perform();
+        writterPage.clickElement(writterPage.rochona_text);
 
 
 
