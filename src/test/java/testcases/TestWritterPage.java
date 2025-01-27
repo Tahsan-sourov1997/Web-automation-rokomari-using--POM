@@ -1,6 +1,7 @@
 package testcases;
 
 import org.openqa.selenium.interactions.Actions;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.WritterPage;
@@ -24,6 +25,20 @@ public class TestWritterPage extends driverSetup{
         writterPage.clickElement(writterPage.somokalin_text);
         actions.scrollToElement(writterPage.getElement(writterPage.rochona_text)).build().perform();
         writterPage.clickElement(writterPage.rochona_text);
+        actions.scrollToElement(writterPage.getElement(writterPage.page_arrow_btn)).build().perform();
+        Thread.sleep(5000);
+        writterPage.clickElement(writterPage.second_page_btn);
+        actions.scrollToElement(writterPage.getElement(writterPage.cart_kothau_keu_nai)).build().perform();
+        Thread.sleep(3000);
+        actions.moveToElement(writterPage.getElement(writterPage.cart_kothau_keu_nai)).build().perform();
+        writterPage.clickElement(writterPage.add_cart_btn);
+        Thread.sleep(4000);
+        String cart_number = writterPage.getElement(writterPage.cart_quantity).getText();
+//        System.out.println(cart_number);
+        Assert.assertEquals(cart_number, "1");
+
+
+
 
 
 
